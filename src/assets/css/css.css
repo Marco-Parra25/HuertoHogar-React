@@ -1,0 +1,199 @@
+/* ==========================
+   RESET GENERAL
+========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ==========================
+   BODY + FIX FOOTER
+========================== */
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f38d08;
+    color: #111;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+/* ==========================
+   HEADER
+========================== */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    padding: 0 40px;
+    background-color: #2eee08;
+}
+
+header a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+/* ==========================
+   HOME
+========================== */
+.imagen-bajo-texto {
+    max-width: 80%;
+    border-radius: 12px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.productos {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.productos .producto img {
+    width: 250px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.productos .producto h3 {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+/* ==========================
+   CATÁLOGO
+========================== */
+.catalogo {
+    width: 100%;
+    max-width: 1100px;
+}
+
+.producto-horizontal {
+    background: #fff;
+    display: flex;
+    gap: 25px;
+    padding: 20px;
+    margin: 25px 0;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.producto-img {
+    width: 200px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.producto-info {
+    flex: 1;
+    text-align: center;
+}
+
+.admin-buttons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-edit,
+.btn-delete {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.btn-edit { background: #444; }
+.btn-delete { background: red; }
+
+/* ==========================
+   FORMULARIOS (Login, Registro, Agregar, Editar)
+========================== */
+.form-card {
+    background: #0cebb3;
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    width: 100%;
+    max-width: 350px;
+    text-align: left;
+}
+
+.form-card h1,
+.form-card h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-card label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-card input,
+.form-card textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #666;
+}
+
+.form-card textarea {
+    height: 90px;
+    resize: vertical;
+}
+
+.btn-form {
+    width: 100%;
+    padding: 12px;
+    background: #1c7ed6;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-form:hover {
+    background: #0b66b1;
+}
+
+.mensaje {
+    margin-top: 10px;
+    font-weight: bold;
+    color: red;
+    text-align: center;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+footer {
+    background-color: #2eee08;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+    margin-top: auto;
+}
