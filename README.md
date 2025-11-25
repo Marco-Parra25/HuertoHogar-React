@@ -1,16 +1,114 @@
-# React + Vite
+🌱 HuertoHogar – Frontend (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este es el frontend del proyecto HuertoHogar, una tienda online desarrollada con React, que forma parte de la Evaluación Parcial Nº3 del ramo Desarrollo FullStack II (DSY1104).
 
-Currently, two official plugins are available:
+El frontend se encarga de la interfaz gráfica, la gestión de sesiones, el login, creación de cuentas y la visualización de productos.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🚀 Tecnologías utilizadas
 
-## React Compiler
+React + Vite
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+JavaScript
 
-## Expanding the ESLint configuration
+HTML / CSS
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Axios (para consumir API — si lo usas)
+
+LocalStorage (gestión de sesión)
+
+Componentes y páginas modulares
+
+📁 Estructura del proyecto
+src/
+ ├── components/        # Componentes reutilizables
+ ├── pages/             # Páginas principales
+ ├── assets/            # Imágenes, CSS y JS
+ ├── App.jsx
+ └── main.jsx
+
+
+Tu frontend incluye las siguientes pantallas (del proyecto subido):
+
+Inicio (index.html)
+
+Catálogo (catalogo.html)
+
+Crear cuenta (crearCuenta.html)
+
+Iniciar sesión (iniciarSesion.html)
+
+CSS global (css.css)
+
+Lógica de login/registro (script.js)
+
+🧩 Funcionalidades del frontend
+
+✔ Interfaz moderna y responsiva
+✔ Catálogo visual de productos
+✔ Formulario de creación de cuenta con validaciones
+✔ Inicio de sesión con validación básica
+✔ Gestión de sesión simulada
+✔ Estructura lista para integrar API real (backend)
+
+▶️ Cómo ejecutar el proyecto
+
+Instalar dependencias:
+
+npm install
+
+
+Iniciar servidor de desarrollo:
+
+npm run dev
+
+
+Abrir en el navegador:
+
+http://localhost:5173/
+
+🔐 Gestión de sesión (frontend)
+
+El frontend incluye:
+
+Validación de usuario y contraseña desde script.js
+
+Mensajes de error y éxito
+
+Lógica adaptable para incorporar autenticación real vía API y JWT
+
+🎨 Estilos
+
+Los estilos están definidos en:
+
+assets/css/css.css
+
+
+Incluye diseño para:
+
+Navbar
+
+Tarjetas de productos
+
+Formularios
+
+Layout general
+
+📷 Capturas (opcional si quieres agrego imágenes reales)
+/screenshots/
+ ├── inicio.png
+ ├── catalogo.png
+ ├── login.png
+ └── registro.png
+
+📦 Requisitos del ramo cubiertos por el frontend
+
+✔ Gestión visual y navegación entre pantallas
+✔ Estructura preparada para integrarse al backend
+✔ Formulario de registro y login
+✔ Base para implementar gestión de sesión real
+✔ Base para restricciones de acceso según roles
+
+👤 Autor
+
+Marco Ignacio Parra Lagos
+Estudiante de Ingeniería en Informática – Duoc UC
