@@ -42,62 +42,62 @@ const Register = () => {
   };
 
   return (
-    <main className="center-page">
-      <section className="cuenta">
-        <h1>CREAR CUENTA</h1>
-        <form id="signup-form" onSubmit={handleSubmit}>
-          <p>
-            <label htmlFor="nombre-usuario">Nombre de Usuario:</label>
-            <input
-              type="text"
-              id="nombre-usuario"
-              name="username"
-              required
-              value={form.username}
-              onChange={handleChange}
-            />
-          </p>
-          <p>
-            <label htmlFor="correo-electronico">Correo Electrónico:</label>
-            <input
-              type="email"
-              id="correo-electronico"
-              name="email"
-              required
-              value={form.email}
-              onChange={handleChange}
-            />
-          </p>
-          <p>
-            <label htmlFor="contrasena">Contraseña:</label>
-            <input
-              type="password"
-              id="contrasena"
-              name="password"
-              required
-              value={form.password}
-              onChange={handleChange}
-            />
-          </p>
-          <p>
-            <label htmlFor="confirmar-contrasena">Confirmar Contraseña:</label>
-            <input
-              type="password"
-              id="confirmar-contrasena"
-              name="confirmPassword"
-              required
-              value={form.confirmPassword}
-              onChange={handleChange}
-            />
-          </p>
-          <button type="submit" className="submit">
-            Crear Cuenta de Usuario
+    <main>
+      <div className="form-card">
+        <h1>Crear Cuenta</h1>
+
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="username">Usuario:</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            required
+            value={form.username}
+            onChange={handleChange}
+          />
+
+          <label htmlFor="email">Correo Electrónico:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            value={form.email}
+            onChange={handleChange}
+          />
+
+          <label htmlFor="password">Contraseña:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            value={form.password}
+            onChange={handleChange}
+          />
+
+          <label htmlFor="confirmPassword">Confirmar Contraseña:</label>
+          <input
+            type="password"
+            id="confirmPassword"
+            name="confirmPassword"
+            required
+            value={form.confirmPassword}
+            onChange={handleChange}
+          />
+
+          <button type="submit" className="btn-form">
+            Crear Cuenta
           </button>
         </form>
-        <div id="signup-error-message" style={{ marginTop: 10, color: "red" }}>
-          {message}
-        </div>
-      </section>
+
+        {message && (
+          <p className={`mensaje ${message.includes("éxito") ? "mensaje-exito" : "mensaje-error"}`}>
+            {message}
+          </p>
+        )}
+      </div>
     </main>
   );
 };

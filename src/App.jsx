@@ -16,24 +16,26 @@ const App = () => {
   return (
     <div className="body">
       <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route
-          path="/catalogo"
-          element={
-            <ProtectedRoute>
-              <Catalog />
-            </ProtectedRoute>
-          }
-        />
-        <Route path="/iniciar-sesion" element={<Login />} />
-        <Route path="/crear-cuenta" element={<Register />} />
-        <Route path="/agregar-producto" element={<ProtectedRoute allowedRoles={["ROLE_ADMIN"]}><AddProduct /> </ProtectedRoute>}/>
-        <Route path="/editar-producto/:id" element={<ProtectedRoute allowedRoles={["ROLE_ADMIN"]}><EditProduct /></ProtectedRoute>
+      <div className="main-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/catalogo"
+            element={
+              <ProtectedRoute>
+                <Catalog />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="/iniciar-sesion" element={<Login />} />
+          <Route path="/crear-cuenta" element={<Register />} />
+          <Route path="/agregar-producto" element={<ProtectedRoute allowedRoles={["ROLE_ADMIN"]}><AddProduct /> </ProtectedRoute>}/>
+          <Route path="/editar-producto/:id" element={<ProtectedRoute allowedRoles={["ROLE_ADMIN"]}><EditProduct /></ProtectedRoute>
   }
 />
 
-      </Routes>
+        </Routes>
+      </div>
       <footer>
         <p>&copy; 2025 HuertoHogar. Todos los derechos reservados.</p>
       </footer>

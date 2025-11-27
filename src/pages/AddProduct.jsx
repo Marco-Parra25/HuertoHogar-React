@@ -68,7 +68,11 @@ const AddProduct = () => {
           <button type="submit" className="btn-form">Guardar</button>
         </form>
 
-        {msg && <p className="mensaje">{msg}</p>}
+        {msg && (
+          <p className={`mensaje ${msg.includes("✔") || msg.includes("éxito") ? "mensaje-exito" : "mensaje-error"}`}>
+            {msg}
+          </p>
+        )}
       </div>
     </main>
   );

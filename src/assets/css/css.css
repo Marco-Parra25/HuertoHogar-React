@@ -12,14 +12,24 @@
 ========================== */
 html, body {
     height: 100%;
-    display: flex;
-    flex-direction: column;
 }
 
 body {
     font-family: Arial, sans-serif;
     background-color: #f38d08;
     color: #111;
+    margin: 0;
+    padding: 0;
+}
+
+.body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
 }
 
 main {
@@ -28,6 +38,19 @@ main {
     flex-direction: column;
     align-items: center;
     padding: 50px 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+main > h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    letter-spacing: 1px;
+    text-align: center;
 }
 
 /* ==========================
@@ -52,29 +75,144 @@ header a {
 /* ==========================
    HOME
 ========================== */
+.home-main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.hero-section {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 40px 20px;
+}
+
+.home-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    letter-spacing: 1px;
+}
+
+.home-subtitle {
+    font-size: 1.2rem;
+    color: #fff;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
 .imagen-bajo-texto {
     max-width: 80%;
     border-radius: 12px;
-    margin-top: 20px;
+    margin: 40px auto;
+    display: block;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.productos-section {
+    margin-top: 60px;
+}
+
+.productos-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    font-weight: bold;
 }
 
 .productos {
     display: flex;
-    gap: 40px;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
     margin-top: 40px;
 }
 
-.productos .producto img {
-    width: 250px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 10px;
+.producto-card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
 }
 
-.productos .producto h3 {
+.producto-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.producto-image-container {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background: #f5f5f5;
+}
+
+.producto-home-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.producto-card:hover .producto-home-img {
+    transform: scale(1.1);
+}
+
+.producto-content {
+    padding: 20px;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.producto-content h3 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.producto-precio {
+    font-size: 1.1rem;
+    color: #2eee08;
+    font-weight: bold;
     margin-top: 10px;
-    font-size: 18px;
+}
+
+@media (max-width: 768px) {
+    .home-title {
+        font-size: 2rem;
+    }
+    
+    .home-subtitle {
+        font-size: 1rem;
+    }
+    
+    .productos-title {
+        font-size: 1.5rem;
+    }
+    
+    .producto-card {
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    .productos {
+        gap: 20px;
+    }
 }
 
 /* ==========================
@@ -91,8 +229,14 @@ header a {
     gap: 25px;
     padding: 20px;
     margin: 25px 0;
-    border-radius: 15px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.producto-horizontal:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
 }
 
 .producto-img {
@@ -107,6 +251,20 @@ header a {
     text-align: center;
 }
 
+.producto-info h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.producto-info .precio {
+    font-size: 1.2rem;
+    color: #2eee08;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
 .admin-buttons {
     margin-top: 10px;
     display: flex;
@@ -118,24 +276,39 @@ header a {
 .btn-delete {
     padding: 8px 14px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     color: white;
     cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
 }
 
-.btn-edit { background: #444; }
-.btn-delete { background: red; }
+.btn-edit { 
+    background: #1c7ed6; 
+}
+
+.btn-edit:hover {
+    background: #0b66b1;
+}
+
+.btn-delete { 
+    background: #e63946; 
+}
+
+.btn-delete:hover {
+    background: #c1121f;
+}
 
 /* ==========================
    FORMULARIOS (Login, Registro, Agregar, Editar)
 ========================== */
 .form-card {
-    background: #0cebb3;
+    background: #fff;
     padding: 40px;
-    border-radius: 30px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
     width: 100%;
-    max-width: 350px;
+    max-width: 400px;
     text-align: left;
 }
 
@@ -143,12 +316,17 @@ header a {
 .form-card h2 {
     text-align: center;
     margin-bottom: 20px;
+    color: #333;
+    font-size: 1.8rem;
+    text-shadow: none;
+    font-weight: bold;
 }
 
 .form-card label {
     font-weight: bold;
     margin-bottom: 5px;
     display: block;
+    color: #333;
 }
 
 .form-card input,
@@ -157,7 +335,15 @@ header a {
     padding: 10px;
     margin-bottom: 15px;
     border-radius: 8px;
-    border: 1px solid #666;
+    border: 2px solid #ddd;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.form-card input:focus,
+.form-card textarea:focus {
+    outline: none;
+    border-color: #2eee08;
 }
 
 .form-card textarea {
@@ -183,8 +369,19 @@ header a {
 .mensaje {
     margin-top: 10px;
     font-weight: bold;
-    color: red;
     text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.mensaje-exito {
+    color: #2eee08;
+    background-color: #e8f5e9;
+}
+
+.mensaje-error {
+    color: #e63946;
+    background-color: #ffe5e5;
 }
 
 /* ==========================
@@ -196,4 +393,5 @@ footer {
     text-align: center;
     color: #fff;
     margin-top: auto;
+    width: 100%;
 }

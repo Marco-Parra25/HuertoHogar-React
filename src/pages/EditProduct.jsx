@@ -100,7 +100,20 @@ const EditProduct = () => {
           <button type="submit" className="btn-form">Guardar cambios</button>
         </form>
 
-        {msg && <p className="mensaje">{msg}</p>}
+        <button 
+          type="button" 
+          className="btn-form" 
+          onClick={() => navigate("/catalogo")}
+          style={{ marginTop: "10px", background: "#666" }}
+        >
+          Volver
+        </button>
+
+        {msg && (
+          <p className={`mensaje ${msg.includes("✔") || msg.includes("éxito") ? "mensaje-exito" : "mensaje-error"}`}>
+            {msg}
+          </p>
+        )}
       </div>
     </main>
   );
