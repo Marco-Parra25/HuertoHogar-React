@@ -1,9 +1,11 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import { useCart } from "../context/CartContext";
 
 const Header = () => {
   const { isAuthenticated, user, logout, role } = useAuth();
+  const { totalItems } = useCart();
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -22,6 +24,10 @@ const Header = () => {
       <nav>
         <Link to="/">Inicio</Link>
         <Link to="/catalogo">Catálogo</Link>
+        <Link to="/carrito" className="cart-link">
+          Carrito
+          <span className="cart-badge">{totalItems}</span>
+        </Link>
 
         {!isAuthenticated && (
           <>

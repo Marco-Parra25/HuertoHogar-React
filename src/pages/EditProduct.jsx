@@ -79,17 +79,17 @@ const EditProduct = () => {
 
       <div className="form-card">
         <form onSubmit={handleSubmit}>
-          <label>Nombre:</label>
-          <input name="nombre" value={form.nombre} onChange={handleChange} required />
+          <label htmlFor="nombre">Nombre:</label>
+          <input id="nombre" name="nombre" value={form.nombre} onChange={handleChange} required />
 
-          <label>Descripción:</label>
-          <textarea name="descripcion" value={form.descripcion} onChange={handleChange} required />
+          <label htmlFor="descripcion">Descripción:</label>
+          <textarea id="descripcion" name="descripcion" value={form.descripcion} onChange={handleChange} required />
 
-          <label>Precio:</label>
-          <input type="number" name="precio" value={form.precio} onChange={handleChange} required />
+          <label htmlFor="precio">Precio:</label>
+          <input id="precio" type="number" name="precio" value={form.precio} onChange={handleChange} required />
 
-          <label>Unidad:</label>
-          <input name="unidad" value={form.unidad} onChange={handleChange} required />
+          <label htmlFor="unidad">Unidad:</label>
+          <input id="unidad" name="unidad" value={form.unidad} onChange={handleChange} required />
 
           <label>Imagen actual:</label>
           <p style={{ fontSize: "14px", marginBottom: "10px" }}>{form.imagenActual}</p>

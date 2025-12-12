@@ -2,10 +2,13 @@ import React, { useEffect, useState } from "react";
 import { getProductos, deleteProductRequest } from "../services/api";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { useCart } from "../context/CartContext";
 
 const Catalog = () => {
   const [productos, setProductos] = useState([]);
+  const [toast, setToast] = useState("");
   const { role, isAuthenticated } = useAuth();
+  const { addItem } = useCart();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -93,8 +96,22 @@ const Catalog = () => {
                 {p.unidad === "unidad" ? "cada una" : `el ${p.unidad}`}
               </div>
 
-              <button className="btn-form" style={{ width: "150px", margin: "10px auto" }}>
-                Comprar
+              <button
+                className="btn-form"
+                style={{ width: "150px", margin: "10px auto" }}
+                onClick={() => {
+                  addItem({
+                    id: p.id,
+                    nombre: p.nombre,
+                    precio: p.precio,
+                    unidad: p.unidad,
+                    imagen: resolveImage(p.imagen),
+                  });
+                  setToast(`"${p.nombre}" añadido al carrito`);
+                  setTimeout(() => setToast(""), 1500);
+                }}
+              >
+                Agregar al carrito
               </button>
 
               {isAuthenticated && role === "ROLE_ADMIN" && (
@@ -118,6 +135,11 @@ const Catalog = () => {
           </div>
         ))}
       </div>
+      {toast && (
+        <div className="toast toast-success">
+          {toast}
+        </div>
+      )}
     </main>
   );
 };
